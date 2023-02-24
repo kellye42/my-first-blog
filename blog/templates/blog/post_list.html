@@ -8,10 +8,12 @@
         <h2>This is my blog website</h2>
     </header>
 
+    {% for post in posts %}
     <article>
-        <p>Hi there!</p>
-        <p>I'm glad to see you</p>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </article>
-
+{% endfor %}
 </body>
 </html>
